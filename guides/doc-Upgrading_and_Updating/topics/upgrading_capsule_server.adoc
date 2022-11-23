@@ -86,11 +86,13 @@ ifdef::satellite[]
 +
 . The `rubygem-foreman_maintain` is installed from the {Project} Maintenance repository or upgraded from the {Project} Maintenance repository if currently installed.
 +
-Ensure {SmartProxy} has access to `{RepoRHEL8ServerSatelliteMaintenanceProductVersion}` and execute:
+. Ensure that the {Project} Maintenance repository is enabled:
 +
 [options="nowrap" subs="attributes"]
 ----
-# {foreman-maintain} self-upgrade
+# subscription-manager repos --enable \
+{RepoRHEL8ServerSatelliteMaintenanceProductVersion} \
+{RepoRHEL8ServerCapsuleServerProductVersion}
 ----
 
 . On {SmartProxyServer}, verify that the `foreman_url` setting points to the {Project} FQDN:
